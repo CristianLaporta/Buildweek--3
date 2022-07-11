@@ -40,11 +40,12 @@
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button type="submit" mat-button>Signup</button>
+      <button mat-button matStepperNext (click)="redirect()">Done</button>
+      <p>You are now done.</p>
+      <ng-template matStepLabel (ngSubmit)="onSubmit()">Signup</ng-template>
     </div>
+
   </mat-step>
 </mat-stepper>

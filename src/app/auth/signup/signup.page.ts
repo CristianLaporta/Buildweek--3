@@ -45,7 +45,7 @@ export class SignupPage implements OnInit {
       resp => {
         console.log(resp);
         this.error = undefined;
-        this.router.navigate(['/login'])
+        // this.router.navigate(['/login'])
       },
       err  => {
         console.log(err.error);
@@ -57,4 +57,7 @@ export class SignupPage implements OnInit {
     this._snackBar.open(message, "Riprovo");
   }
 
+  redirect() {
+    this.router.navigate(['./login']);
+  }
 }
