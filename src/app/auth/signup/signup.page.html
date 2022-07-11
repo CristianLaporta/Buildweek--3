@@ -1,27 +1,50 @@
-<mat-card>
-  <h1>Registrati!</h1>
-  <form  #f="ngForm" (ngSubmit)="onSubmit()">
-
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>First name</mat-label>
-        <input ngModel name="firstname" matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Last name</mat-label>
-        <input ngModel name="lastname" matInput>
-      </mat-form-field></td>
-      
-    </tr></table>
-    
-      <td><mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Email</mat-label>
-        <input ngModel name="email" matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" ngModel name="password" matInput>
-      </mat-form-field></td>
-      <button  type="submit" mat-button color="primary">Registrati</button>
-  </form>
-</mat-card>
+<h1>Registrati!</h1>
+<mat-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your Name</ng-template>
+      <div class="field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Firstname</mat-label>
+          <input matInput placeholder="Firstname" formControlName="firstname" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Lastname</mat-label>
+          <input matInput placeholder="Lastname" formControlName="lastname" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out your Email and Password">
+    <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit()">
+      <div class="field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="example@example.com" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="password" formControlName="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button type="submit" mat-button>Signup</button>
+    </div>
+  </mat-step>
+</mat-stepper>

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginPage } from './login/login.page';
 import { SignupPage } from './signup/signup.page';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
@@ -24,6 +24,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CommonModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatDividerModule,
     MatListModule,
     MatFormFieldModule,

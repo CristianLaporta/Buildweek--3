@@ -47,8 +47,7 @@ export class AuthService {
       })
     )
   }
-
-  signup(obj: ISignupData) {
+    signup(obj: ISignupData) {
     return this.http.post(this.urlJsonServer+'/register', obj);
   }
 
