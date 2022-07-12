@@ -38,4 +38,7 @@ export class LoginPage implements OnInit {
     this._snackBar.open(message, "OK");
   }
 
+  redirect() {
+    this.router.navigate(['./signup']);
+  }
 }
