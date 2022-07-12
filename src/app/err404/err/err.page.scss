@@ -1,0 +1,37 @@
+.err {
+  background-image: url(https://i.pinimg.com/originals/e5/79/81/e579812bc94e0dbba1525d15e589ece1.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: bottom;
+  width: 100%;
+  height: 93%;
+  color: #91cde5;
+  cursor: context-menu;
+  display: flex;
+  flex-direction: column;
+
+
+  h1 {
+    text-align: center;
+    padding-top: 10%;
+    font-size: 10rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:#362f68;
+  }
+
+  h3 {
+    text-align: center;
+    color: #54a8aa;
+    padding-top: 5%;
+    font-size: 2rem;
+  }
+
+  p {
+    text-align: center;
+    padding-top: 2%;
+  }
+
+  button {
+    color: #c3cdce;
+  }
+}
