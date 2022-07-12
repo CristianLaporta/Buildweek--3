@@ -1,17 +1,36 @@
+body {
+  background-image: url(https://i.pinimg.com/originals/99/d0/eb/99d0eb11dbdc158324b22983823f99f5.jpg) !important;
+  background-position: center;
+  width: 100%;
+  height: 93%;
+}
+
 .mat-form-field{
     color:white;
-    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }
 .mat-card{
+  background-color: #a5a5a5;
     width: 460px;
     margin: 0 auto;
-    margin-top: 10%;
+    top: 30%;
+    box-shadow: 0px 0px 0px;
 }
+
 .mat-button{
-    background-color: rgb(207, 7, 107);
-    color: aliceblue;
-    margin-left: 40%;
+    background-color: #1b2443;
+    color: white;
+    width: 100%;
 }
-h1{
+
+h1 {
     text-align: center;
-  }
+}
+
+p {
+  text-align: center;
+  margin-top: 1%;
+}

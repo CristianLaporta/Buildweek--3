@@ -1,7 +1,18 @@
+mat-toolbar {
+  background: rgb(22,48,85);
+  background: linear-gradient(40deg, rgba(22,48,85,0.9164040616246498) 37%, rgba(57,47,122,0.7763480392156863) 100%);
+}
+
 .example-spacer {
     flex: 1 1 auto;
-  }
-  .mat-button{
-    background-color: rgb(255, 72, 0);
-    color: aliceblue;
-  }
+}
+
+.mat-button{
+
+  color: white;
+}
+
+.line {
+  text-decoration: none;
+  color: white;
+}

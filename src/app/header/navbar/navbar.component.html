@@ -1,5 +1,28 @@
-<mat-toolbar color="primary">
-  <span>App Settimanale</span>
+<mat-toolbar>
+  <span><mat-icon>flight_takeoff</mat-icon> Space invoices </span>
   <span class="example-spacer"></span>
-  <button  [routerLink]="['/signup/']" mat-button color="warn" >Registrati!</button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="line" href="#" [routerLink]="['/home']" routerLinkActive="router-link-active">Home </a>
+      <a class="line" href="#" [routerLink]="['/users']" routerLinkActive="router-link-active" > Users </a>
+      <a class="line" href="#" [routerLink]="['/contact']" routerLinkActive="router-link-active" > Contact </a>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>keyboard_tab</mat-icon>
+          <a type="button" (click)="logout()"> Logout</a>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>control_point</mat-icon>
+          <a class="line" href="#" [routerLink]="['/signup/']" routerLinkActive="router-link-active">Signup!</a>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
 </mat-toolbar>

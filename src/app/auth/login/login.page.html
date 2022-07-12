@@ -1,20 +1,23 @@
-<mat-card>
-  <h1>Accedi!</h1>
-    <form #f="ngForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input type="email" ngModel name="email"  id="email" matInput placeholder="pat@example.com" required>
-          <mat-error></mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your password</mat-label>
-          <input ngModel name="password"  id="password" matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
-        <div>
-          <button  type="submit" mat-button color="primary">Accedi</button>
-        </div>
-      </form>
- </mat-card>
+<body>
+  <mat-card>
+    <h1>Login</h1>
+      <form #f="ngForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input type="email" ngModel name="email"  id="email" matInput placeholder="pat@example.com" required>
+            <mat-error></mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input ngModel name="password"  id="password" matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div>
+            <button  type="submit" mat-button color="primary">Login</button>
+            <p>Need a new Account? Click the button Signup ap above!</p>
+          </div>
+        </form>
+   </mat-card>
+</body>

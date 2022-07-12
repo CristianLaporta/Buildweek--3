@@ -48,6 +48,13 @@
       "firstname": "cristian",
       "lastname": "laporta",
       "id": 7
+    },
+    {
+      "email": "olga@example.com",
+      "password": "$2a$10$yJ08HS84F90.V5lSC1k2euqVEwkhhci3GhiUZK4BiqZ3M.BH0zWaa",
+      "firstname": "olga",
+      "lastname": "gatto",
+      "id": 8
     }
   ]
 }
