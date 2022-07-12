@@ -7,6 +7,7 @@ import { HeaderModule } from './header/header.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 /* import { UsersModule } from './users/users.module'; */
 /* import { Err404Module } from './err404/err404.module'; */
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeModule,
     AuthModule,
     BrowserAnimationsModule,
+    NgbModule,
 
   ],
   providers: [],
