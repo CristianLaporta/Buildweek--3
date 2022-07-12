@@ -7,6 +7,7 @@ import { HeaderModule } from './header/header.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 /* import { UsersModule } from './users/users.module'; */
 /* import { Err404Module } from './err404/err404.module'; */
 
@@ -21,8 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeModule,
     AuthModule,
     BrowserAnimationsModule,
-    /* UsersModule, */
-    /* Err404Module */
+
   ],
   providers: [],
   bootstrap: [AppComponent]

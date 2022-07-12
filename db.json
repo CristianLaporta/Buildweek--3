@@ -55,6 +55,13 @@
       "firstname": "olga",
       "lastname": "gatto",
       "id": 8
+    },
+    {
+      "email": "cricom@live.it",
+      "password": "$2a$10$Rw0vWpfpfCWikJa41XUpxeJ96sMcai9DNEh6NUcf3q58Vy5lOUdtq",
+      "firstname": "cristian",
+      "lastname": "laporta",
+      "id": 9
     }
   ]
 }

@@ -4,8 +4,6 @@ import { AuthGuard } from './auth/auth.guard';
 import { LoginPage } from './auth/login/login.page';
 import { SignupPage } from './auth/signup/signup.page';
 import { HomePage } from './home/home/home.page';
-/* import { ErrPage } from './err404/err/err.page'; */
-/* import { UsersPage } from './users/users/users.page'; */
 
 const routes: Routes = [
   {
@@ -25,18 +23,6 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupPage
-  },
-  {
-    path: 'users',
-    canActivate: [AuthGuard],
-    /* component: UsersPage, */
-    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
-
-  },
-  {
-    path: 'contact',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   },
   {
     path: '**',
