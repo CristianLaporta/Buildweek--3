@@ -11,17 +11,18 @@
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
-          <mat-icon>keyboard_tab</mat-icon>
-          <a type="button" (click)="logout()"> Logout</a>
-        </button>
-        <button mat-menu-item>
           <mat-icon>control_point</mat-icon>
-          <a class="line" href="#" [routerLink]="['/signup/']" routerLinkActive="router-link-active">Signup!</a>
+          <a class="line" href="#" [routerLink]="['/signup/']" routerLinkActive="router-link-active">New Account</a>
         </button>
         <button mat-menu-item>
           <mat-icon>notifications_off</mat-icon>
           <span>Disable alerts</span>
         </button>
+        <button mat-menu-item>
+          <mat-icon>keyboard_tab</mat-icon>
+          <a type="button" (click)="logout()"> Logout</a>
+        </button>
+
       </mat-menu>
     </div>
   </div>

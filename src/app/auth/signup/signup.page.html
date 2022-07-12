@@ -47,9 +47,13 @@
       <p>You are now done.</p>
       <ng-template matStepLabel (ngSubmit)="onSubmit()">Signup</ng-template>
     </div>
-
   </mat-step>
 </mat-stepper>
+
+<div class="returnToLogin">
+  <p>Do you already have an account? Sign in!</p>
+  <button class="buttonReturn" mat-button (click)="redirect()">Login Page</button>
+</div>
 </body>
 
 
