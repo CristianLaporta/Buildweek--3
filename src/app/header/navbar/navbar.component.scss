@@ -19,3 +19,7 @@ mat-toolbar {
 span{
   margin-right: 20px;
 }
+mat-toolbar{
+  position: fixed;
+  z-index: 100;
+}
