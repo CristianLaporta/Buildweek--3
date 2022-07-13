@@ -4,10 +4,12 @@ import { HomePage } from './home/home.page';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import { VideobannerComponent } from './videobanner/videobanner.component';
 
 @NgModule({
   declarations: [
-    HomePage
+    HomePage,
+    VideobannerComponent
   ],
   imports: [
     CommonModule,

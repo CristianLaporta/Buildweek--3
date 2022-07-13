@@ -8,13 +8,13 @@ import { HomePage } from './home/home/home.page';
 const routes: Routes = [
   {
     path: 'home',
-    canActivate: [AuthGuard],
+    
     component: HomePage,
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'home'
   },
   {
     path: 'login',
