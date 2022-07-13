@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-videobanner',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideobannerComponent implements OnInit {
 
-  constructor() { }
+
 
   ngOnInit(): void {
   }

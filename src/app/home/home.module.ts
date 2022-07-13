@@ -7,18 +7,28 @@ import {MatListModule} from '@angular/material/list';
 import { VideobannerComponent } from './videobanner/videobanner.component';
 import {MatButtonModule} from '@angular/material/button';
 import { CardComponent } from './home/card/card.component';
+import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     HomePage,
     VideobannerComponent,
-    CardComponent
+    CardComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatDividerModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }
