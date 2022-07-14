@@ -9,6 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { CarrelloComponent } from './carrello/carrello.component';
+
+
+
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -22,7 +26,7 @@ import { CarrelloComponent } from './carrello/carrello.component';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    MatDialogModule,
+    MatDialogModule
 
   ],
   exports: [

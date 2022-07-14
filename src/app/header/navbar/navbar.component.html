@@ -5,7 +5,7 @@
   <span class="example-spacer"></span>
   <div id="navbarNavAltMarkup">
 
-    <span *ngIf="this.currentRoute != '/login' && this.currentRoute != '/signup' "  (click)="openDialog()"> 
+    <span *ngIf="this.currentRoute != '/login' && this.currentRoute != '/signup' "  (click)="openDialog()">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-fill"
         viewBox="0 0 16 16">
         <path
@@ -29,6 +29,8 @@
     </svg>
   </span>
   </div>
-
+  <span [routerLink]="['/admin']" routerLinkActive="router-link-active" >
+    <mat-icon>android</mat-icon>
+  </span>
 </mat-toolbar>
 
