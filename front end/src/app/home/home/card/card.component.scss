@@ -1,0 +1,44 @@
+.bge{
+  background-image: url(https://i.gifer.com/4l9N.gif);
+  background-repeat: repeat;
+  background-size:cover;
+  background-position: center;
+  min-width: 100%;
+  height: 100%;
+
+
+}
+
+div {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap !important;
+  justify-content: center;
+  gap: 25px;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+h2,h3 {
+  text-align: center;
+}
+
+mat-card {
+  background-color: #2a327c;
+
+
+}
+
+mat-card img{
+  max-width: 260px;
+
+}
+
+button{
+background-color: rgb(235, 235, 235);
+margin-left: 29%;
+}

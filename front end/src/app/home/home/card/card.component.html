@@ -1,0 +1,22 @@
+<body class="bge">
+  <br>
+  <h1>Nuovi Arrivi</h1>
+  <h2>Best Sellers</h2>
+  <div >
+    <span *ngFor="let prod of prodotti[0]">
+    <mat-card>
+      <img src="{{prod.img}}" alt="1">
+      <br>
+      <h2>{{prod.nome}}</h2>
+      <h3>costo: {{prod.prezzo}} €</h3>
+      <span *ngIf="acces == false"> 
+  <button mat-button color="warn" [routerLink]="['/login']" >Acquista!</button>
+    </span>
+    <span *ngIf="acces == true"> 
+      <button mat-button color="warn" (click)="openSnackBar(prod.nome)" >Acquista!</button>
+        </span>
+    </mat-card>
+  </span>
+  </div>
+</body>
+
