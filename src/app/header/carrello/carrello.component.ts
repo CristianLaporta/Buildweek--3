@@ -27,7 +27,11 @@ export class CarrelloComponent implements OnInit {
         postGetl(obj: string) {
           this.route.params.subscribe(ele => {
               this.http.get("https://socialcris.duckdns.org:8445/api/carrello/?name="+obj).subscribe(Response =>  this.carrellol.push(Response));   
+             
           }
           )
-        }     
+        }    
+        clearstore(){
+          this.carrellol = [];
+        }
 }
