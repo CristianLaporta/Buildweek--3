@@ -13,7 +13,7 @@
   <button mat-button color="warn" [routerLink]="['/login']" >Acquista!</button>
     </span>
     <span *ngIf="acces == true"> 
-      <button mat-button color="warn" (click)="openSnackBar(prod.nome)" >Acquista!</button>
+      <button mat-button color="warn" (click)="openSnackBar(prod.nome); addcart(prod.nome,prod.img,prod.prezzo)" >Acquista!</button>
         </span>
     </mat-card>
   </span>
