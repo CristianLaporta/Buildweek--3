@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-carrello',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carrello.component.scss']
 })
 export class CarrelloComponent implements OnInit {
-
-  constructor() { }
-
+  idutente!:number;
+  carrellol:any = [];
+  constructor(private authService: AuthService, private http: HttpClient, private route: ActivatedRoute) { }
   ngOnInit(): void {
+   this.verifyuser()
   }
-
+  verifyuser() {
+    this.authService.authSubject.subscribe(val => {
+    if (val !== null) {
+     fetch('https://socialcris.duckdns.org:8445/api/verify/'+ val)
+       .then((response) => response.json()).then((response) => {
+         this.postGetl(response[0].iduser) 
+        }
+        )}})
+        }
+        postGetl(obj: string) {
+          this.route.params.subscribe(ele => {
+              this.http.get("https://socialcris.duckdns.org:8445/api/carrello/?name="+obj).subscribe(Response =>  this.carrellol.push(Response));   
+          }
+          )
+        }     
 }

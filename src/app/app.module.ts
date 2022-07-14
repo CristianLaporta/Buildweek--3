@@ -8,11 +8,13 @@ import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminsectionComponent } from './adminsection/adminsection.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminsectionComponent,
   ],
   imports: [
     BrowserModule,

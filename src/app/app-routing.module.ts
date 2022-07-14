@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AdminsectionComponent } from './adminsection/adminsection.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginPage } from './auth/login/login.page';
 import { SignupPage } from './auth/signup/signup.page';
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupPage
+  },
+  {
+    path: 'admin',
+    component: AdminsectionComponent
   },
   {
     path: '**',
