@@ -11,4 +11,7 @@
             
             <button mat-button color="primary" (click)="clearstore()">rimuovi tutti i prodotti</button>
         </div>
-    
+    <span *ngIf="carrellol == []">
+        <h1>non ci sono prodotti nel carrello</h1>
+
+    </span>
