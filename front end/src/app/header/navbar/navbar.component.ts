@@ -11,23 +11,23 @@ import { CarrelloComponent } from '../carrello/carrello.component';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+ cech = localStorage.getItem('autenticated');
   currentRoute: string = window.location.pathname;
-
+  acces:boolean = false;
   constructor(private authService: AuthService, private router: Router, public dialog: MatDialog ) { }
 
   ngOnInit(): void {
-
+    
 }
 ngDoCheck(): void {
-
+  this.ceck()
   this.currentRoute = window.location.pathname;
 }
 logout() {
-  this.authService.logout();
-  this.router.navigate(['./login']);
+this.authService.logout()
+ 
 }
-openDialog() {
+openDialog(): void {
   const dialogRef = this.dialog.open(CarrelloComponent,{
     autoFocus: false,
     maxHeight: '90vh' 
@@ -36,4 +36,12 @@ openDialog() {
     console.log(`Dialog result: ${result}`);
   });
 }
+ceck(){
+  if(localStorage.getItem('autenticated') == null){
+   this.acces = false
+  }else{
+   this.acces = true
+  }
+
+ }
 }

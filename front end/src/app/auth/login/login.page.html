@@ -1,7 +1,7 @@
 <body>
   <mat-card>
     <h1>Login</h1>
-      <form #f="ngForm" (ngSubmit)="onSubmit()">
+      <form #f="ngForm" (ngSubmit)="login()">
           <mat-form-field appearance="fill">
             <mat-label>Enter your email</mat-label>
             <input type="email" ngModel name="email"  id="email" matInput placeholder="pat@example.com" required>

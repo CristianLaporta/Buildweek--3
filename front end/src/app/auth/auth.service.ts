@@ -11,52 +11,48 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  //private loggedIn = false;
-  authSubject = new BehaviorSubject<IAuthData | null>(null);
-  private urlJsonServer = 'http://localhost:4201';
+  error= false;
+  errorstring = "";
   helper = new JwtHelperService();
+  authSubject = new BehaviorSubject<IAuthData | null>(null);
+  private API = "https://socialcris.duckdns.org:8445";
 
   constructor(private http: HttpClient, private router: Router) {
     this.restoreUserLogin();
   }
 
-  /* isAuthenticated(): boolean {
-    return this.loggedIn;
-  } */
-
-  restoreUserLogin() {
-    const json = localStorage.getItem('isAuthenticated');
-    if(json) {
-      const user = JSON.parse(json);
-      if(this.helper.isTokenExpired(user.accessToken)) {
-        localStorage.removeItem('isAuthenticated');
-        return
-      } else {
-        this.authSubject.next(user);
-      }
+restoreUserLogin() {
+  const json = localStorage.getItem('autenticated');
+  if(json) {
+    const user = JSON.parse(json);
+      this.authSubject.next(user);
     }
   }
 
-  login(obj: ISignupData) {
-    //this.loggedIn = true;
-    return this.http.post<IAuthData>(this.urlJsonServer+'/login', obj).pipe(
-      /* tap(ele => console.log(ele)), */
-      tap(data => {
-        this.authSubject.next(data);
-        localStorage.setItem('isAuthenticated', JSON.stringify(data));
-      })
-    )
-  }
-    signup(obj: ISignupData) {
-    return this.http.post(this.urlJsonServer+'/register', obj);
-  }
 
-  logout() {
-    /* this.loggedIn = false; */
-    console.log('Logout')
-    this.authSubject.next(null);
-    localStorage.removeItem('isAuthenticated');
-    this.router.navigate(['/login']);
+  Login(obj: ISignupData) {
+
+    return this.http.post<IAuthData>(this.API + '/api/login', obj).pipe(
+      tap(data => {
+      let test =JSON.stringify(data);
+      let test2 = '"'+"error"+'"'
+        if( test == test2){
+          this.error = true;
+          this.errorstring = "i dati inseriti sono sbagliati!";
+        } else{
+          this.error= false;
+          this.authSubject.next(data);
+          localStorage.setItem("autenticated", JSON.stringify(data));
+        
+        }
+        
+      })
+
+    );
   }
+logout(){
+  localStorage.removeItem('autenticated');
+  this.router.navigate(['/home']);
+}
 
 }

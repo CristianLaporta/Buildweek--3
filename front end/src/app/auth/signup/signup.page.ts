@@ -35,22 +35,7 @@ export class SignupPage implements OnInit {
   }
 
   onSubmit() {
-    let temp: ISignupData = {
-      firstname : this.firstFormGroup.value.firstname || '',
-      lastname : this.firstFormGroup.value.lastname || '',
-      email : this.secondFormGroup.value.email || '',
-      password : this.secondFormGroup.value.password || '',
-    }
-    this.authService.signup(temp).subscribe(
-      resp => {
-        console.log(resp);
-        this.error = undefined;
-      },
-      err  => {
-        console.log(err.error);
-        this.error = err.error;
-      }
-    )
+
   }
   openSnackBar(message: string) {
     this._snackBar.open(message, "Riprovo");
