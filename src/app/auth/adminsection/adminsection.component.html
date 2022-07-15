@@ -49,7 +49,7 @@
 
       <mat-tab >
       
-
+        <button  class="bottonec"mat-button (click)="selectTab(1)">torna indietro</button>
         <span *ngFor="let prod of fattureutentespec">
           <mat-card class="example-card">
             <mat-card-header>
@@ -90,6 +90,7 @@
 
         
         <p>
+        
           <mat-form-field appearance="fill" floatLabel="always">
             <mat-label>Amount</mat-label>
             <input matInput [(ngModel)]="prezzocambiato" type="number" class="example-right-align" placeholder="0">
@@ -100,9 +101,7 @@
         <button (click)="cambioprezzo()" mat-raised-button color="primary" class="savechanges">Save Changes</button>
       </mat-tab>
     </mat-tab-group>
-    <button mat-button (click)="selectTab(0)">mostra 1</button>
-    <button mat-button (click)="selectTab(1)">mostra 2</button>
-    <button mat-button (click)="selectTab(2)">mostra 3</button>
+
   </div>
 </body>
 

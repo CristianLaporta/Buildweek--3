@@ -22,7 +22,8 @@ p {
 }
 
 table {
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .example-card {
@@ -41,4 +42,11 @@ table {
 
 .savechanges {
   left: 46%;
+}
+
+.bottonec{
+ margin-left: 40%;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ background-color: red;
 }
