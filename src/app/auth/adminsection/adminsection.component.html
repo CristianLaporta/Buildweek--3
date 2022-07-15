@@ -48,13 +48,6 @@
         <!---->
 
       <mat-tab >
-<<<<<<< HEAD
-
-
-=======
-
-        <button  class="bottonec"mat-button (click)="selectTab(1)">torna indietro</button>
->>>>>>> c9aa3b13d764e39439b31711b31f85bd7b954737
         <span *ngFor="let prod of fattureutentespec">
           <mat-card class="example-card">
             <mat-card-header>
@@ -79,6 +72,7 @@
             <mat-card-actions>
               <button mat-raised-button class="change" (click)="modificafattura(prod.id) "(click)="selectTab(2)" >Modifica</button>
               <button mat-raised-button color="warn" (click)="eliminafattura(prod.id)">Elimina fattura</button>
+              <button mat-raised-button color="primary" (click)="selectTab(1)">Torna indietro</button>
             </mat-card-actions>
           </mat-card>
                   </span>
