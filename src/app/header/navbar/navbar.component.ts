@@ -12,22 +12,41 @@ import { CarrelloComponent } from '../carrello/carrello.component';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
- cech = localStorage.getItem('autenticated');
+  user:any = [];
+  userlenght!:any;
+  useradmin!:number;
+  cech = localStorage.getItem('autenticated');
   currentRoute: string = window.location.pathname;
   acces:boolean = false;
   constructor(private authService: AuthService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-
+    this.verifyuser() 
+   
 }
+verifyuser() {
+  this.authService.authSubject.subscribe(val => {
+  if (val !== null) {
+   fetch('https://socialcris.duckdns.org:8446/api/verify/'+ val)
+     .then((response) => response.json()).then((response) => {
+      this.user.push(response);
+     this.useradmin = response[0].admin;
+      }
+      )}})
+      }
+
 ngDoCheck(): void {
   this.ceck()
   this.currentRoute = window.location.pathname;
+  this.userlenght = this.user.length
 }
+
+
 logout() {
 this.authService.logout()
-
+location.reload(); 
 }
+
 openDialog(): void {
   const dialogRef = this.dialog.open(CarrelloComponent,{
     autoFocus: false,
@@ -37,6 +56,8 @@ openDialog(): void {
     console.log(`Dialog result: ${result}`);
   });
 }
+
+
 ceck(){
   if(localStorage.getItem('autenticated') == null){
    this.acces = false

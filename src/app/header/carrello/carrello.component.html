@@ -1,13 +1,8 @@
 <span *ngFor="let prod of carrellol[0]">
-    
-      <img src="{{prod.img}}" alt="1">
+      <img src="{{prod.img}}" alt="img">
       <br>
       <h2>{{prod.nome}}</h2>
       <h3>costo: {{prod.prezzo}} €</h3>
       <button mat-button color="primary" (click)="clearstore(prod.id)">rimuovi prodotto</button>
       <hr>
-    </span>
-    <span *ngIf="carrellol == []">
-        <h1>non ci sono prodotti nel carrello</h1>
-
     </span>

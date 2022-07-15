@@ -14,6 +14,7 @@ export class CarrelloComponent implements OnInit {
   constructor(private authService: AuthService, private http: HttpClient, private route: ActivatedRoute) { }
   ngOnInit(): void {
    this.verifyuser()
+
   }
   verifyuser() {
     this.authService.authSubject.subscribe(val => {
@@ -26,8 +27,7 @@ export class CarrelloComponent implements OnInit {
         }
         postGetl(obj: string) {
           this.route.params.subscribe(ele => {
-              this.http.get("https://socialcris.duckdns.org:8446/api/carrello/?name="+obj).subscribe(Response =>  this.carrellol.push(Response));   
-             
+              this.http.get("https://socialcris.duckdns.org:8446/api/carrello/?name="+obj).subscribe(Response => this.carrellol = Response);
           }
           )
         }    
