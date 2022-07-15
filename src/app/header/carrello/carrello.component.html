@@ -1,4 +1,6 @@
-<span *ngFor="let prod of carrellol[0]">
+<div *ngIf="totale > 0">costo totale: {{totale}}€  <button (click)="compra(totale)">compra</button> </div>
+<div *ngIf="totale <= 0"> <h1>non ci sono prodotti nel carrello</h1></div>
+<span *ngFor="let prod of carrellol">
       <img src="{{prod.img}}" alt="img">
       <br>
       <h2>{{prod.nome}}</h2>
