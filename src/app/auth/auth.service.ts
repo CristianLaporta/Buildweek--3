@@ -15,7 +15,7 @@ export class AuthService {
   errorstring = "";
   helper = new JwtHelperService();
   authSubject = new BehaviorSubject<IAuthData | null>(null);
-  private API = "https://socialcris.duckdns.org:8445";
+  private API = "https://socialcris.duckdns.org:8446";
 
   constructor(private http: HttpClient, private router: Router) {
     this.restoreUserLogin();

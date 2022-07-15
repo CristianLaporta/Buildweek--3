@@ -31,7 +31,7 @@ idutente!:number;
 
   postGet() {
     this.route.params.subscribe(ele => {
-        this.http.get("https://socialcris.duckdns.org:8445/api/prodotti").subscribe(Response => this.prodotti.push(Response));
+        this.http.get("https://socialcris.duckdns.org:8446/api/prodotti").subscribe(Response => this.prodotti.push(Response));
     }
     )
   }
@@ -59,7 +59,7 @@ idutente!:number;
 addcart(name: string,img: string,price: number) {
 this.authService.authSubject.subscribe(val => {
 if (val !== null) {
- fetch('https://socialcris.duckdns.org:8445/api/verify/'+ val)
+ fetch('https://socialcris.duckdns.org:8446/api/verify/'+ val)
    .then((response) => response.json()).then((response) => {
            
     this.name = name;
@@ -73,7 +73,7 @@ if (val !== null) {
     }
     addcartcomplete() {
       if (this.utente !== "") {
-        fetch("https://socialcris.duckdns.org:8445/api/carrello" + "?name=" + this.name + "&img=" + this.img + "&price=" + this.price + "&user=" + this.utente +"&idutente=" + this.idutente , {
+        fetch("https://socialcris.duckdns.org:8446/api/carrello" + "?name=" + this.name + "&img=" + this.img + "&price=" + this.price + "&user=" + this.utente +"&idutente=" + this.idutente , {
           method: "POST",
           cache: 'no-cache'
         }).then(function (response) { return console.log(response); });
